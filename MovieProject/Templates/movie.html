@@ -1,0 +1,38 @@
+{% extends 'Index.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+</head>
+<body>
+    {% block content %}
+   <table border="2" align="center" cellpadding="10" cellspacing="2">
+    <tr>
+        <th colspan="4">MOVIES</th>
+    </tr>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Year</th> 
+        <th>Image</th> 
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    <tr>
+     
+        <td>{{movie.id}}</td>
+        <td>{{movie.Name}}</td>
+        <td>{{movie.Desc}}</td>
+        <td>{{movie.year}}</td> 
+        <td><img src="{{movie.Img.url}}"width="100" height="100"></td> 
+        <td><a class="btn btn-primary"href="{% url 'Prd_App:update' movie.id %}">Update</td>
+        <td><a class="btn btn-danger" href="{% url 'Prd_App:delete' movie.id %}">Delete</td>    </tr>
+
+   </table>
+   {% endblock %}
+</body>
+</html>

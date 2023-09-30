@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+{% extends 'Index.html' %}
+{% block content %}
+<table align="center">
+    <tr><td><a href="http://127.0.0.1:8000/Add/">Add Movies</a></td></tr>
+</table>
+
+<div class="container">
+    <div class="row">
+        {% for i in movie_list %}
+        <div class="col-md-3">
+            <div class="card" >
+                <img class="card-img-top" src="{{i.Img.url}}" alt="Card image cap" width="250" height="250">
+                <div class="card-body">
+                  <h5 class="card-title">{{i.Name}}</h5>
+                  <p class="card-text">{{i.Desc}}</p>
+                  <a href="{% url 'Prd_App:Parti_id' i.id %}" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,7 @@
+{% extends 'Index.html' %}
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    <h1 align="center">Are You Want To Delete This Movie</h1>
+    <h1 align="center"><input type ="submit" value="Delete" ></h1>
+    {% endblock %}
